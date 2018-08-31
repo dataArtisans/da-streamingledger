@@ -1,0 +1,67 @@
+<!--
+  Copyright 2018 Data Artisans GmbH
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<component name="InspectionProjectProfileManager">
+    <profile version="1.0">
+        <option name="myName" value="Project Default"/>
+        <inspection_tool class="ComparatorNotSerializable" enabled="true" level="WARNING" enabled_by_default="true"/>
+        <inspection_tool class="NonSerializableFieldInSerializableClass" enabled="true" level="WARNING"
+                         enabled_by_default="true">
+            <option name="ignorableAnnotations">
+                <value/>
+            </option>
+            <option name="ignoreAnonymousInnerClasses" value="false"/>
+            <option name="superClassString" value=""/>
+        </inspection_tool>
+        <inspection_tool class="NonSerializableObjectPassedToObjectStream" enabled="true" level="WARNING"
+                         enabled_by_default="true"/>
+        <inspection_tool class="NonSerializableWithSerialVersionUIDField" enabled="true" level="WARNING"
+                         enabled_by_default="true"/>
+        <inspection_tool class="NonSerializableWithSerializationMethods" enabled="true" level="WARNING"
+                         enabled_by_default="true"/>
+        <inspection_tool class="ReadObjectAndWriteObjectPrivate" enabled="true" level="WARNING"
+                         enabled_by_default="true"/>
+        <inspection_tool class="ReadResolveAndWriteReplaceProtected" enabled="true" level="WARNING"
+                         enabled_by_default="true"/>
+        <inspection_tool class="SerialPersistentFieldsWithWrongSignature" enabled="true" level="WARNING"
+                         enabled_by_default="true"/>
+        <inspection_tool class="SerialVersionUIDNotStaticFinal" enabled="true" level="WARNING"
+                         enabled_by_default="true"/>
+        <inspection_tool class="SerializableHasSerialVersionUIDField" enabled="true" level="WARNING"
+                         enabled_by_default="true">
+            <option name="ignoreAnonymousInnerClasses" value="false"/>
+            <option name="superClassString" value=""/>
+        </inspection_tool>
+        <inspection_tool class="SerializableInnerClassHasSerialVersionUIDField" enabled="true" level="WARNING"
+                         enabled_by_default="true">
+            <option name="ignoreAnonymousInnerClasses" value="false"/>
+            <option name="superClassString" value=""/>
+        </inspection_tool>
+        <inspection_tool class="SerializableInnerClassWithNonSerializableOuterClass" enabled="true" level="WARNING"
+                         enabled_by_default="true">
+            <option name="ignoreAnonymousInnerClasses" value="false"/>
+            <option name="superClassString" value=""/>
+        </inspection_tool>
+        <inspection_tool class="SerializableStoresNonSerializable" enabled="true" level="WARNING"
+                         enabled_by_default="true"/>
+        <inspection_tool class="SerializableWithUnconstructableAncestor" enabled="true" level="WARNING"
+                         enabled_by_default="true"/>
+        <inspection_tool class="ToArrayCallWithZeroLengthArrayArgument" enabled="true" level="WARNING"
+                         enabled_by_default="true"/>
+        <inspection_tool class="TransientFieldInNonSerializableClass" enabled="true" level="WARNING"
+                         enabled_by_default="true"/>
+        <inspection_tool class="TransientFieldNotInitialized" enabled="true" level="WARNING" enabled_by_default="true"/>
+    </profile>
+</component>
