@@ -22,8 +22,7 @@ import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.util.OutputTag;
 
-import com.dataartisans.streamingledger.examples.simpletrade.generator.DepositsGenerator;
-import com.dataartisans.streamingledger.examples.simpletrade.generator.TransactionsGenerator;
+import com.dataartisans.streamingledger.examples.simpletrade.generator.SyntheticSources;
 import com.dataartisans.streamingledger.sdk.api.StateAccess;
 import com.dataartisans.streamingledger.sdk.api.StreamingLedger;
 import com.dataartisans.streamingledger.sdk.api.StreamingLedger.ResultStreams;
@@ -67,6 +66,9 @@ public class SimpleTradeExample {
         StateBackend backend = new FsStateBackend(uri, true);
         env.setStateBackend(backend);
 
+        // create and add two data sources
+        SyntheticSources sources = SyntheticSources.create(env, 1);
+
         // start building the transactional streams
         StreamingLedger tradeLedger = StreamingLedger.create("simple trade example");
 
@@ -80,7 +82,7 @@ public class SimpleTradeExample {
                 .withValueType(Long.class);
 
         // produce the deposits transaction stream
-        DataStream<DepositEvent> deposits = env.addSource(new DepositsGenerator(1));
+        DataStream<DepositEvent> deposits = sources.deposits;
 
         // define transactors on states
         tradeLedger.usingStream(deposits, "deposits")
@@ -89,7 +91,7 @@ public class SimpleTradeExample {
                 .on(books, DepositEvent::getBookEntryId, "asset", READ_WRITE);
 
         // produce transactions stream
-        DataStream<TransactionEvent> transfers = env.addSource(new TransactionsGenerator(1));
+        DataStream<TransactionEvent> transfers = sources.transactions;
 
         OutputTag<TransactionResult> transactionResults = tradeLedger.usingStream(transfers, "transactions")
                 .apply(new TxnHandler())
