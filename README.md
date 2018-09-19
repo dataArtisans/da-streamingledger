@@ -1,4 +1,4 @@
-# dA Stream Ledger
+# data Artisans Streaming Ledger
 
 ### Serializable ACID transactions on streaming data
 
@@ -20,7 +20,7 @@ Let's create a simple ledger of user accounts.
 An account in the ledger is identified by a `String` key,
 and has a `Long` value (its balance).
 
-We start by defining the stream ledger scope. All state definitions and transaction functions
+We start by defining the streaming ledger scope. All state definitions and transaction functions
 would be bound to this named scope `"Account Ledger"`.
 
 ```java
@@ -64,7 +64,7 @@ final class TransactionEvent {
 }
 
 ```
-And we would like to transfer money from the source account and the target account, in response to an incoming `TransactionEvent`.
+And we would like to transfer money from the source account to the target account, in response to an incoming `TransactionEvent`.
 
 ```java
     DataStream<TransactionEvent> transactions = ...
@@ -131,7 +131,7 @@ cd da-streamingledger
 mvn clean install
 ```
 
-dA Stream Ledger is now available at your local `.m2` repository.
+data Artisans Streaming Ledger is now available at your local `.m2` repository.
 
 ## Obtaining from Maven Central
 

@@ -53,7 +53,7 @@ public interface StateAccess<T> {
     T read() throws StateAccessException;
 
     /**
-     * Reads a value by replaces missing values with a default supplier.
+     * Reads a value by replacing missing values with a default supplier.
      *
      * @param defaultSupplier a default value supplier.
      * @return the value bound to this state access or default otherwise.
